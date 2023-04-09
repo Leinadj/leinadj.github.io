@@ -1,1 +1,1 @@
-I have a blog :)
+Do not take everything too serious :) I hope this content is somehow helpful for you
