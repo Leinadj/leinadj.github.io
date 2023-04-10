@@ -33,8 +33,9 @@ One family of models that can be used in these scenarios is called General Addit
 
 As you can see in the following table (taken from [^7]), additive models extend mere linear models by replacing the scalar ("one-value", "just a simple number") weights $\beta_i$ with individual functions $f_i$.
 
-![Linear Models, image from [^7]](/images/EBM/20230402135438.png)
 
+![](/images/EBM/20230402135438.png)
+(Image taken from image from [^7])
 This leads to more predictive power at the end. But how?
 
 Take the simple linear model.
