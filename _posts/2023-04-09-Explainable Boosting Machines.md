@@ -33,7 +33,7 @@ One family of models that can be used in these scenarios is called General Addit
 
 As you can see in the following table (taken from [^7]), additive models extend mere linear models by replacing the scalar ("one-value", "just a simple number") weights $\beta_i$ with individual functions $f_i$.
 
-![Linear Models, image from [^7]](../images/20230402135438.png)
+![Linear Models, image from [^7]](/images/EBM/20230402135438.png)
 
 This leads to more predictive power at the end. But how?
 
@@ -165,7 +165,7 @@ So we have two functions that are fit on feature 1, and two functions that are f
 So we just add them up into one function for feature 1, and one function for feature 2. That's it.
 
 The pseudo-code for the previously described procedure looks as follows (taken from the original paper [^7])
-<img width="600" height="250" src="../images/20230403220005.png">
+<img width="600" height="250" src="/images/EBM/20230403220005.png">
 </img>
 Do this a lot of times, let's say 10.000 times, and we will have a lot of trees per feature
 As in each iteration we fit one tree per feature in the round-robin fashion.
@@ -267,7 +267,7 @@ Y is the target we predict.
 
 ### Global interpretability
 
-![](../images/20230407220231.png)
+![](/images/EBM/20230407220231.png)
 
 
 In this figure (taken from the official EBM documentation [^2]), you can see the feature names on the y-axis, and the mean absolute score of each feature (weighted) in the model on the x-axis.  The scale of the y-axis is the same as the outcome scale. So one unit on the y-axis corresponds to one unit (increase or decrease, depending on the sign of course) of the outcome quantity that we predict.
@@ -287,7 +287,7 @@ Then we can look at the invidiual features, and see, which input value leads to 
 Using these values, we can explain the prediction of an individual sample (by just looking at the explainability of each feature value of the corresponding sample).
 The example is taken from the official EBM documentation [^2]
 
-![](../images/20230407221312.png)
+![](/images/EBM/20230407221312.png)
 
 
 So this binary feature tells us, that having the categorical value for feature 1 of "Fijii" increases the outcome by a value of 50 while having a category of "Peru" decreases it by ~25.
@@ -323,7 +323,7 @@ $\mathrm{logistic}(η)=\frac{1}{1+\mathrm{exp}^{-η}}$
 That produces the following plot (for example, taken from [^13]).
 
 
-![](../images/20230408151855.png)
+![](/images/EBM/20230408151855.png)
 
 We will replace the parameter η with our regression EBM.
 As, in the end, we have one prediction per feature in our regression EBM, that are added together to get the final prediction, we will simply stick with these outputs to explain the effects of the logistic function on interpretability. For a single data point $x_i$ Let's denote the overall output for feature $f$ of all $n$ features in our EBM model, by $y_{fi}$.
