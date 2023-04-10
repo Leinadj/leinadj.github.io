@@ -165,8 +165,9 @@ So we have two functions that are fit on feature 1, and two functions that are f
 So we just add them up into one function for feature 1, and one function for feature 2. That's it.
 
 The pseudo-code for the previously described procedure looks as follows (taken from the original paper [^7])
-<img width="600" height="250" src="/images/EBM/20230403220005.png">
-</img>
+
+![](/images/EBM/20230403220005.png)
+
 Do this a lot of times, let's say 10.000 times, and we will have a lot of trees per feature
 As in each iteration we fit one tree per feature in the round-robin fashion.
 So for 10.000 iterations, we will have 10.000 trees for feature 1, 10.000 trees for feature 2, and so ... . That is a lot. Inference is going to take years for that ...  and we need a big machine for doing so.
