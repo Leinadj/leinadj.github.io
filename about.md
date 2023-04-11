@@ -1,4 +1,3 @@
-<html>
 <head>
   <title>About Me</title>
   <style>
@@ -40,12 +39,12 @@
 }
 
   </style>
-</head>
-<body>
   <h1>About Me</h1>
   <div class="profile-image">
     <img src="/images/profile.jpg" alt="" class="profile-image__img">
-    
+    <div class="profile-image__placeholder">
+      <span class="profile-image__placeholder-text">Insert Your Image</span>
+    </div>
   </div>
   <p>
     Hello there! Welcome to my blog, your central repository of notes on all things Data, Math, and Applied Machine Learning.
@@ -68,5 +67,3 @@
     Let's learn, grow, and make a positive impact with software solutions that truly make a difference.
     I hope my experiences and insights will be helpful to you as well. Thanks for visiting my blog :)
   </p>
-</body>
-</html>
