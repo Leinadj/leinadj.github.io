@@ -2,6 +2,8 @@
 <div class="profile-image">
 <img src="/images/profile.jpg" alt="" class="profile-image__img">
 </div>
+
+
 <p>
 Hello there! Welcome to my blog, your central repository of notes on all things Data, Math, and Applied Machine Learning.
 I'm thrilled to have you here! Allow me to introduce myself.
