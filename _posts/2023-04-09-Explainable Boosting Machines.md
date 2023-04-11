@@ -1,4 +1,6 @@
-<h1 style="text-align: center "> The force is strong with you </h1>
+ "Exploring Explainable Boosting Machines: A Powerful Machine Learning Technique"
+
+<title>Exploring Explainable Boosting Machines: Your Companion through real-world Machine Learning Challenges</title>
 
 
 ```
