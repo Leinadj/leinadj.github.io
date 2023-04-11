@@ -9,6 +9,7 @@
       height: 200px; /* Set the desired height */
       border-radius: 50%; /* Create a circular shape */
       overflow: hidden; /* Hide any overflow */
+     margin: 0 auto; /* Center the image horizontally */
     }
 
     .profile-image__img {
@@ -33,15 +34,18 @@
       font-size: 18px;
       color: #999; /* Set the desired color */
     }
+
+    h1 {
+  text-align: center; /* Center the title horizontally */
+}
+
   </style>
 </head>
 <body>
   <h1>About Me</h1>
   <div class="profile-image">
     <img src="/images/profile.jpg" alt="" class="profile-image__img">
-    <div class="profile-image__placeholder">
-      <span class="profile-image__placeholder-text">Insert Your Image</span>
-    </div>
+    
   </div>
   <p>
     Hello there! Welcome to my blog, your central repository of notes on all things Data, Math, and Applied Machine Learning.
