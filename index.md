@@ -8,4 +8,4 @@
   gtag('config', 'G-C37Q5P261K');
 </script>
 
-Do not take everything too serious :) I hope this content is somehow helpful for you
+Do not take everything too serious :) I hope this content is somehow helpful for you!
