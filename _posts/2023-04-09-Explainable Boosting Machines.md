@@ -35,7 +35,7 @@ As you can see in the following table (taken from [^7]), additive models extend 
 
 
 ![](/images/EBM/20230402135438.png)
-(Image taken from image from [^7])
+(Image taken from [^7])
 This leads to more predictive power at the end. But how?
 
 Take the simple linear model.
@@ -428,3 +428,12 @@ Other sources on EBMs include [^1] [^2] [^3] [^4] [^5] [^6] [^7] [^8] [^9] [^10]
 [^13]: Book "Interpretable Machine Learning: A guide for making black box models interpretable" by Christoph Molnar.
 
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C37Q5P261K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C37Q5P261K');
+</script>
