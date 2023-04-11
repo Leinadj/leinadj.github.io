@@ -5,7 +5,7 @@
 'Black-boxes are without alternative' is a lie. There is only ignorance.
 
 Through linearity, I gain Interpretabilty.
-Through trees, I gain Preditive Power.
+Through trees, I gain Predictive Power.
 
 Through Predictive Power, I gain Victory.
 
