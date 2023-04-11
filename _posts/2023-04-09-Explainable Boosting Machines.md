@@ -1,5 +1,3 @@
- "Exploring Explainable Boosting Machines: A Powerful Machine Learning Technique"
-
 <title>Exploring Explainable Boosting Machines: Your Companion through real-world Machine Learning Challenges</title>
 
 
