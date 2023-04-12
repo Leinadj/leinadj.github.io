@@ -54,7 +54,7 @@ Do you see where this is going?
 
 For some examples with (more or less) linear (left) and non-linear relationships (right) have a look at the following figure. You can clearly see, that it would be beneficial in the non-linear cases to assign different weight values depending on the value of the feature we are looking at (taken from [^7]).
 
-![](/images/20230402142607.png)
+![](/images/EBM/20230402142607.png)
 
 So far, I have talked about regression tasks, but these models can be easiliy extended for  classification by turning the predictions the model makes (i.e. some unconstrained number) into probabilities. These probabilities can then be turned into class values by applying a threshold to the probability. In the binary case, we just apply a function to the result of the additive general model, that turns the predictions into into probabilities for a certain class, i.e. values between 0 and 1 [^7].  We can do so by applying the inverse logit function to our output. It maps our regression output to a range of values between 0 and 1 [^7]. 
 
@@ -137,7 +137,7 @@ Then we use this error to train the second function $F_2$, which is doing its pr
 $F_2(error_1) = y_{pred}^2$ [^11].
 
 When using these two functions, the overall algorithm will consist of the two single functions.#
-$y_true$ = $F_1$ + $residual_1$ = $y_{pred}$ + $y_{true} - y_{pred}$
+$y_true$ = $F_1$ + $\mathrm{residual}_1$ = $y_{pred}$ + $y_{true} - y_{pred}$
 
 Okay, this is quite straightforward.
 But a high residual is, well, not really desirable.
@@ -147,7 +147,7 @@ The gradient part of the gradient boosting comes in, when we aim to find good fu
 
 If you want to have a full example of how this can be computed, you can find an excellent walkthrough here:
 
- https://www.analyticsvidhya.com/blog/2021/09/gradient-boosting-algorithm-a-complete-guide-for-beginners/.
+[Gradient Boosting for Beginners](https://www.analyticsvidhya.com/blog/2021/09/gradient-boosting-algorithm-a-complete-guide-for-beginners/)
 
 
 So that's it?
@@ -395,35 +395,32 @@ In case of one-hot encoding, we have plenty of binary ones again :) Makes stuff 
 
 EBMs are one of my favourite tools for solving real world problems for clients that want to have high predictive accuracy and high interpretability. And in fact, this is the standard set of requirements :) Thanks for developing this kind of model dear Microsoft Research!
 
-
-
-
 --------------------
 Other sources on EBMs include [^1] [^2] [^3] [^4] [^5] [^6] [^7] [^8] [^9] [^10] [^11] [^12]
 
-[^1]: EBM general: https://interpret.ml/docs/ebm.html
+[^1]: EBM general: [https://interpret.ml/docs/ebm.html](https://interpret.ml/docs/ebm.html)
 
-[^2]: EBM regression: https://interpret.ml/docs/ebm-internals-regression.html
+[^2]: EBM regression: [https://interpret.ml/docs/ebm-internals-regression.html](https://interpret.ml/docs/ebm-internals-regression.html)
 
-[^3]: EBM binary classification: https://interpret.ml/docs/ebm-internals-classification.html
+[^3]: EBM binary classification: [https://interpret.ml/docs/ebm-internals-classification.html](https://interpret.ml/docs/ebm-internals-classification.html)
 
 [^4]: EBM multi-class classification.html
 
-[^5]: EBM blogpost: https://towardsdatascience.com/ebm-bridging-the-gap-between-ml-and-explainability-9c58953deb33
+[^5]: EBM blogpost: [https://towardsdatascience.com/ebm-bridging-the-gap-between-ml-and-explainability-9c58953deb33](https://towardsdatascience.com/ebm-bridging-the-gap-between-ml-and-explainability-9c58953deb33)
 
-[^6]: InterpretML Paper: https://arxiv.org/abs/1909.09223
+[^6]: InterpretML Paper: [https://arxiv.org/abs/1909.09223](https://arxiv.org/abs/1909.09223)
 
-[^7]: Paper: Intelliiglbe models for classification and regression https://www.cs.cornell.edu/~yinlou/papers/lou-kdd12.pdf
+[^7]: Paper: Intelliiglbe models for classification and regression [https://www.cs.cornell.edu/~yinlou/papers/lou-kdd12.pdf](https://www.cs.cornell.edu/~yinlou/papers/lou-kdd12.pdf)
 
-[^8]: Paper: Accurate intelligible models with pairwise interactions" (Y. Lou, R. Caruana, J. Gehrke, and G. Hooker 2013) https://www.cs.cornell.edu/~yinlou/papers/lou-kdd13.pdf
+[^8]: Paper: Accurate intelligible models with pairwise interactions" (Y. Lou, R. Caruana, J. Gehrke, and G. Hooker 2013) [https://www.cs.cornell.edu/~yinlou/papers/lou-kdd13.pdf](https://www.cs.cornell.edu/~yinlou/papers/lou-kdd13.pdf)
 
 [^9]: Paper: "Interpretability, Then What? Editing Machine Learning Models to Reflect Human Knowledge and Values" (Zijie J. Wang, Alex Kale, Harsha Nori, Peter Stella, Mark E. Nunnally, Duen Horng Chau, Mihaela Vorvoreanu, Jennifer Wortman Vaughan, Rich Caruana 2022)
 
-[^10]: Gradient Boosting Blog: https://towardsdatascience.com/all-you-need-to-know-about-gradient-boosting-algorithm-part-1-regression-2520a34a502
+[^10]: Gradient Boosting Blog: [https://towardsdatascience.com/all-you-need-to-know-about-gradient-boosting-algorithm-part-1-regression-2520a34a502](https://towardsdatascience.com/all-you-need-to-know-about-gradient-boosting-algorithm-part-1-regression-2520a34a502)
 
-[^11]: Gradient Boosting Wikipedia: https://en.wikipedia.org/wiki/Gradient_boosting#:~:text=Gradient%20boosting%20is%20a%20machine,which%20are%20typically%20decision%20trees. 
+[^11]: Gradient Boosting Wikipedia: [https://en.wikipedia.org/wiki/Gradient_boosting#:~:text=Gradient%20boosting%20is%20a%20machine,which%20are%20typically%20decision%20trees](https://en.wikipedia.org/wiki/Gradient_boosting#:~:text=Gradient%20boosting%20is%20a%20machine,which%20are%20typically%20decision%20trees)
 
-[^12]: EBM youtube: https://www.youtube.com/watch?v=MREiHgHgl0k
+[^12]: EBM youtube: [https://www.youtube.com/watch?v=MREiHgHgl0k](https://www.youtube.com/watch?v=MREiHgHgl0k)
 
 [^13]: Book "Interpretable Machine Learning: A guide for making black box models interpretable" by Christoph Molnar.
 
