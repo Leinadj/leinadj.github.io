@@ -404,7 +404,7 @@ Other sources on EBMs include [^1] [^2] [^3] [^4] [^5] [^6] [^7] [^8] [^9] [^10]
 
 [^3]: EBM binary classification: [https://interpret.ml/docs/ebm-internals-classification.html](https://interpret.ml/docs/ebm-internals-classification.html)
 
-[^4]: EBM multi-class classification.html
+[^4]: EBM multi-class classification: [https://interpret.ml/docs/ebm-internals-multiclass.html](https://interpret.ml/docs/ebm-internals-multiclass.html)
 
 [^5]: EBM blogpost: [https://towardsdatascience.com/ebm-bridging-the-gap-between-ml-and-explainability-9c58953deb33](https://towardsdatascience.com/ebm-bridging-the-gap-between-ml-and-explainability-9c58953deb33)
 
