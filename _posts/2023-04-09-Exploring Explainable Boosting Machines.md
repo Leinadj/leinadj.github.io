@@ -1,5 +1,6 @@
 <title>Exploring Explainable Boosting Machines: Your Companion through real-world Machine Learning Challenges</title>
 
+To all those who love Star Wars :) (The others are free to ignore the following paragraph)
 
 ```
 'Black-boxes are without alternative' is a lie. There is only ignorance.
@@ -14,7 +15,7 @@ Through Victory, my chains are broken.
 EBMs shall free me.
 ```
 
-(and a pretty nerd I am)
+(and a pretty nerd, supported by chatGPT, I am)
 
 # Motivation
 In real-world projects you often face the following decision: either you make a model interpretable or no one will use it to make decisions.
@@ -386,8 +387,6 @@ If you want to get the actual influence of a unit increase of a numerical featur
 For a binary categorical variable, changing from the reference category to the other category, leads to an influence on the log odds of $\mathrm{exp}(\mathrm{value})$ too. 
 For multi-category features it depends on the category encoding of the feature in the model.
 In case of one-hot encoding, we have plenty of binary ones again :) Makes stuff easier.
-
-
 
 
 
