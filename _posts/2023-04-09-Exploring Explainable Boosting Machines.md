@@ -164,12 +164,12 @@ So we just add them up into one function for feature 1, and one function for fea
 
 The pseudo-code for the previously described procedure looks as follows (taken from the original paper [^7])
 
-1. $f_j <- 0$
+1. $f_j \leftarrow 0$
 2. for m=1 to M do
 3.    for j=1 to n do
-4.    $R <- \{x_{ij}, y_i - \sum_k{f_k}\}^N_1$>
-5.    Learn shaping function $S: x_j -> y$ using $R$ as training dataset
-6.    $f_j <- f_j + S$
+4.    $R \leftarrow \{x_{ij}, y_i - \sum_k{f_k}\}^N_1$
+5.    Learn shaping function $S: x_j \rightarrow y$ using $R$ as training dataset
+6.    $f_j \leftarrow f_j + S$
 
 Do this a lot of times, let's say 10.000 times, and we will have a lot of trees per feature
 As in each iteration we fit one tree per feature in the round-robin fashion.
@@ -324,10 +324,11 @@ Logistic function:
 
 $\mathrm{logistic}(η)=\frac{1}{1+\mathrm{exp}^{-η}}$
 
-That produces the following plot (for example, taken from [^13]).
+That produces the following plot (for example, taken from wikipedia).
 
 
-![](/images/EBM/20230408151855.png)
+![](/images/EBM/logistic.png)
+
 
 We will replace the parameter η with our regression EBM.
 As, in the end, we have one prediction per feature in our regression EBM, that are added together to get the final prediction, we will simply stick with these outputs to explain the effects of the logistic function on interpretability. For a single data point $x_i$ Let's denote the overall output for feature $f$ of all $n$ features in our EBM model, by $y_{fi}$.
