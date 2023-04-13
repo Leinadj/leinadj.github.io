@@ -1,5 +1,7 @@
 <title>Exploring Explainable Boosting Machines: Your Companion through real-world Machine Learning Challenges</title>
 
+[glassbox models](/images/EBM/glassbox.jpg)
+
 To all those who love Star Wars :) (The others are free to ignore the following paragraph)
 
 ```
