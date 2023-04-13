@@ -34,11 +34,8 @@ One family of models that can be used in these scenarios is called General Addit
 
 # More than linear
 
-As you can see in the following table (taken from [^7]), additive models extend mere linear models by replacing the scalar ("one-value", "just a simple number") weights $\beta_i$ with individual functions $f_i$.
+Additive models extend mere linear models by replacing the scalar ("one-value", "just a simple number") weights $\beta_i$ with individual functions $f_i$ [^7].
 
-
-![](/images/EBM/20230402135438.png)
-(Image taken from [^7])
 This leads to more predictive power at the end. But how?
 
 Take the simple linear model.
@@ -55,9 +52,6 @@ In our secret, arbitrary function you assign a weight of $100$ to data points th
 
 Do you see where this is going?
 
-For some examples with (more or less) linear (left) and non-linear relationships (right) have a look at the following figure. You can clearly see, that it would be beneficial in the non-linear cases to assign different weight values depending on the value of the feature we are looking at (taken from [^7]).
-
-![](/images/EBM/20230402142607.png)
 
 So far, I have talked about regression tasks, but these models can be easiliy extended for  classification by turning the predictions the model makes (i.e. some unconstrained number) into probabilities. These probabilities can then be turned into class values by applying a threshold to the probability. In the binary case, we just apply a function to the result of the additive general model, that turns the predictions into into probabilities for a certain class, i.e. values between 0 and 1 [^7].  We can do so by applying the inverse logit function to our output. It maps our regression output to a range of values between 0 and 1 [^7]. 
 
@@ -170,7 +164,12 @@ So we just add them up into one function for feature 1, and one function for fea
 
 The pseudo-code for the previously described procedure looks as follows (taken from the original paper [^7])
 
-![](/images/EBM/20230403220005.png)
+1. $f_j <- 0$
+2. for m=1 to M do
+3.    for j=1 to n do
+4.    $R <- \{x_{ij}, y_i - \sum_k{f_k}\}^N_1$>
+5.    Learn shaping function $S: x_j -> y$ using $R$ as training dataset
+6.    $f_j <- f_j + S$
 
 Do this a lot of times, let's say 10.000 times, and we will have a lot of trees per feature
 As in each iteration we fit one tree per feature in the round-robin fashion.
