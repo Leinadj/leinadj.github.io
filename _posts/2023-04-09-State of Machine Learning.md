@@ -1,1 +1,0 @@
-https://mlcontests.com/state-of-competitive-machine-learning-2022/
