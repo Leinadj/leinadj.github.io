@@ -138,7 +138,7 @@ $y_true$ = $F_1$ + $\mathrm{residual}_1$ = $y_{pred}$ + $y_{true} - y_{pred}$
 
 Okay, this is quite straightforward.
 But a high residual is, well, not really desirable.
-With a single predicting function $F_1$, the residual is just the gap between the true value and our prediction. We want to fill this gap. So instead of accepting this residual, we train a second model to predict the $residual_1$. So that we can add this prediction to the first function, in order to reduce the overall residual.
+With a single predicting function $F_1$, the residual is just the gap between the true value and our prediction. We want to fill this gap. So instead of accepting this residual, we train a second model to predict the $\mathrm{residual}_1$. So that we can add this prediction to the first function, in order to reduce the overall residual.
 
 The gradient part of the gradient boosting comes in, when we aim to find good functions $F$ to fit for including them in the model. We usually want to fit many models, and we do not want to assign a huge contribution to each individual model, but we want to reduce the residual error step-by-step. And taking small steps, i.e., having functions that slow, but steadily reduce the residual, leads to better models. So we add a scaling factor to the outcome / the prediction of each learned function $f_i$. This scaling factor is called the learning rate, and it points in the direction to reduce the overall loss. And we find this learning rate, by taking the derivative of the overall objective function, with respect to the learning rate parameter [^11].
 
@@ -151,12 +151,12 @@ So that's it?
 Not exactly. In fact, in EBMs, this "standard" boosting procedure is altered, so that we do not fit the individual functions $F_i$ on the overall residual (computed over all features in the data), but to fit individual functions $F_i$ for each feature separately. How can we do this? By simply computing one function at a time, and only using one feature at a time for fitting this function. And we do this in a round-robin fashion. Revisiting features one at a time, adding a new term to the overall model in the boosting procedure.
 So we end up with multiple functions $F_i$, that are fit for each feature, as we revisit each feature multiple times to reduce the residuals in the boosting algorithm [^7]. If we have two features in the data, this would look like:
 1. Fit $F_1$ on feature 1 only
-2. Compute $residual_1$ with respect to $F_1$
-3. Fit $F_2$ to predict the $residual_1$ using feature 2
-4. Compute $residual_2$ with respect to $F_1$ and $F_2$
+2. Compute $\mathrm{residual}_1$ with respect to $F_1$
+3. Fit $F_2$ to predict the $\mathrm{residual}_1$ using feature 2
+4. Compute $\mathrm{residual}_2$ with respect to $F_1$ and $F_2$
 5. Fit $F_3$ on feature 1 only
-6. Compute $residual_3$ with respect to $F_1$ and $F_2$ and $F_3$
-7. Fit $F_4$ on feature 2 to predict the $residual_3$ using feature 2
+6. Compute $\mathrm{residual}_3$ with respect to $F_1$ and $F_2$ and $F_3$
+7. Fit $F_4$ on feature 2 to predict the $\mathrm{residual}_3$ using feature 2
 8. ...
 
 So we have two functions that are fit on feature 1, and two functions that are fit on feature 2 here after two iterations.
