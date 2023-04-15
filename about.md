@@ -14,7 +14,6 @@ I've delved into the world of applied machine learning in energy informatics, ex
 I take pride in pushing forward Data Science related topics and actively engaging in product development at my current job.
 </p>
 <p>
-But that's not all there is to me. I'm also a proud father of two and a happily married guy.
 As I navigate through the ever-evolving jungle of machine learning, I strive to share my insights with you, my readers.
 If you come across any errors or have suggestions, I'm more than happy to fix them.
 After all, my utmost goal is to share with you the invaluable insights I've gained along my own learning journey,
