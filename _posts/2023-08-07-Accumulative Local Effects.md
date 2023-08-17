@@ -248,7 +248,7 @@ plt.show()
 
 
     
-![png](/images/ALE/output_28_0.png)
+![ale putput](/images/ALE/output_28_0.png)
     
 
 
