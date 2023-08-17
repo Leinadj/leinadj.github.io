@@ -65,32 +65,3 @@ I hope my experiences and insights will be helpful to you as well. Thanks for vi
 
   </style>
 
-(END)
-    .profile-image__img {
-      width: 100%; /* Make the image fill the container */
-      height: 100%;
-      object-fit: cover; /* Maintain aspect ratio and crop if needed */
-    }
-
-    .profile-image__placeholder {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #f3f3f3; /* Set the desired background color */
-    }
-
-    .profile-image__placeholder-text {
-      font-size: 18px;
-      color: #999; /* Set the desired color */
-    }
-
-    h1 {
-  text-align: center; /* Center the title horizontally */
-}
-
-  </style>
