@@ -36,7 +36,7 @@ number of samples $x_j^{(i)}$ in a certain neighorhood
 
 The formula for computing the ALE (for estimating it using sums): 
 
-$\hat{\widetilde{f}}_{j, ALE}(x) = \sum_{k=1}^{k_j(x)}  \frac{1}{n_j(k)} \sum_{i:x_j^{(i)} \in N_j(k)} \left[ \hat{f}(z_{k,j}, x^{(i)}_{ - j})- \hat{f}(z_{k-1,j}, x^{(i)}_{ - j}) \right]$
+$$ \hat{\widetilde{f}}_{j, ALE}(x) = \sum_{k=1}^{k_j(x)}  \frac{1}{n_j(k)} \sum_{i:x_j^{(i)} \in N_j(k)} \left[ \hat{f}(z_{k,j}, x^{(i)}_{ - j})- \hat{f}(z_{k-1,j}, x^{(i)}_{ - j}) \right] $$
 
 
 So we have some additional notation in here:
@@ -83,13 +83,13 @@ The construction of the grid depends on the type of variable (numerical, continu
 
 After computing the uncentered ALE estimate $\hat{\widetilde{f}}_{j, ALE}(x)$, we center it, so that the mean effect is zero over the column.
 
-$\hat{f}_{j, ALE}(x) = \hat{\widetilde{f}}_{j, ALE}(x) - \frac{1}{n} \sum_{i=1}^n {\hat{\widetilde{f}}_{j, ALE}(x^{(i)}_j)}$
+$$ \hat{f}_{j, ALE}(x) = \hat{\widetilde{f}}_{j, ALE}(x) - \frac{1}{n} \sum_{i=1}^n {\hat{\widetilde{f}}_{j, ALE}(x^{(i)}_j)}$$
 
 So, for the ALE of a feature, we take the individual ALE estimates and averages over all samples (i.e. indirectly over the possible values $j$ can have).
 
 Now we have the centered ALE estimate (mean effect is zero): $\hat{f}_{j, ALE}(x) $
 
-$\hat{\widetilde{f}}_{j, ALE}(x^{(i)}_j) = \sum_{k=1}^{k_j(x^{(i)}_j)}  \frac{1}{n_j(k)} \sum_{i:x_j^{(i)} \in N_j(k)} \left[ \hat{f}(z_{k,j}, x^{(i)}_{ - j})- \hat{f}(z_{k-1,j}, x^{(i)}_{ - j}) \right] =   \frac{1}{n_j(k)} \sum_{i:x_j^{(i)} \in N_j(k)} \left[ \hat{f}(z_{k,j}, x^{(i)}_{ - j})- \hat{f}(z_{k-1,j}, x^{(i)}_{ - j}) \right] $
+$$ \hat{\widetilde{f}}_{j, ALE}(x^{(i)}_j) = \sum_{k=1}^{k_j(x^{(i)}_j)}  \frac{1}{n_j(k)} \sum_{i:x_j^{(i)} \in N_j(k)} \left[ \hat{f}(z_{k,j}, x^{(i)}_{ - j})- \hat{f}(z_{k-1,j}, x^{(i)}_{ - j}) \right] =   \frac{1}{n_j(k)} \sum_{i:x_j^{(i)} \in N_j(k)} \left[ \hat{f}(z_{k,j}, x^{(i)}_{ - j})- \hat{f}(z_{k-1,j}, x^{(i)}_{ - j}) \right] $$
 
 ## Example computation on bike rental dataset
 
@@ -135,7 +135,7 @@ for col in X.columns:
         encoders[col] = encoder
 ```
 
-#### We need to have an estimator, our predictor, that we can interpret. We will train a tree regressor model and see how the features influence the predictions using ALE.
+ We need to have an estimator, our predictor, that we can interpret. We will train a tree regressor model and see how the features influence the predictions using ALE.
 
 
 ```python
@@ -144,7 +144,7 @@ regressor = DecisionTreeRegressor(random_state=0)
 regressor = regressor.fit(X, Y)
 ```
 
-### ALE for Continious Feature
+#### ALE for Continious Feature
 
 We take the temperature feature as an example for a continious feature
 
