@@ -7,7 +7,7 @@ Most of the practical implementations of predictive scenarios heavily focus on d
 What does that mean? That means, when getting a prediction, you get one predicted sample per timestamp.
 As a result, you do not get any information on how "certain" or "uncertain" the model is when predicting the future data points. As an enduser relying on the predicted data points, for example, in a financial forecasting scenario in a business department, knowing nothing about the "certainty" of the model can lead to huge problems. When basing decisions on the predicted data points, knowing when to trust the predictions and when to be careful is crucial for enduser adoption of the implemented machine learning forecast.
 
-Let's get the idea behing having prediction intervals instead of single-point predictions using an example.
+Let's get the idea behind having prediction intervals instead of single-point predictions using an example.
 The example dataset is about electricity demand forecasting and can be found here (https://raw.githubusercontent.com/scikit-learn-contrib/MAPIE/master/examples/data/demand_temperature.csv).
 
 The first figure shows single-point predictions made with a random forest regressor.
@@ -31,10 +31,10 @@ The algorithm does this, by using the errors the estimated model $\hat{f}$ produ
 1. Training data $\{(x_i, y_i)\}_{i=1}^T$
 2. Our prediction (forecasting) algorithm $A$
 3. The significance level $\alpha$ for the coverage we desire
-4. An aggregation function $\phi$. I will replace the $\phi$ symbol in the following using the abbrevation $agg$ for simplicty. The aggregation function is simply a function that aggregates mutliple scalar values into one, such as, the mean, the median, or something else. Usually, we just take the mean
-5. Another hyperarameter for the conformal prediction algorithm is the batch size $s$, that we use to split our training data into subsets.
+4. An aggregation function $\phi$. I will replace the $\phi$ symbol in the following using the abbreviation $agg$ for simplicity. The aggregation function is simply a function that aggregates multiple scalar values into one, such as, the mean, the median, or something else. Usually, we just take the mean
+5. Another hyperparameter for the conformal prediction algorithm is the batch size $s$, that we use to split our training data into subsets.
 6. Where would we be without some test data (or new data in a productive setting) that was NOT used for training our prediction algorithm.
-$\{(x_t, y_t)\}_{t=T+1}^{T+T_1}$. Timestep $t$ is not part of the timesteps in our training data $T$. Of course, we do not immediately know $y_t$, but we will use the targret value $y_t$ of our new data point $t$ for creating future intervals. Any why is that you might think: We do not know $y_t$ of a new sample immediately, because this is what the whole prediction is about :) We want to predict this target value.
+$\{(x_t, y_t)\}_{t=T+1}^{T+T_1}$. Timestep $t$ is not part of the timesteps in our training data $T$. Of course, we do not immediately know $y_t$, but we will use the target value $y_t$ of our new data point $t$ for creating future intervals. Any why is that you might think: We do not know $y_t$ of a new sample immediately, because this is what the whole prediction is about :) We want to predict this target value.
 
 So we have everything in place, the data we need, the prediction algorithm we selected, the hyperparameter values for the conformal prediction algorithm and some new data that we want to compute prediction intervals for.
 
@@ -44,7 +44,7 @@ So we have everything in place, the data we need, the prediction algorithm we se
 
 - $S$ simply denotes an index $S$et
 
-- $\hat{f}_{-i}$ denotes that the esimtated predictor $\hat{f}$ is estimated without (i.e. the minus sign) the data sample with index $i$
+- $\hat{f}_{-i}$ denotes that the estimated predictor $\hat{f}$ is estimated without (i.e. the minus sign) the data sample with index $i$
 
 - To denote the training subset the estimated predictor $\hat{f}$ was trained on, we add the number $b$ of the subset $S_b$ to the estimator $\hat{f}^b$. 
 For the estimators that are based on the aggregation of other estimators we add the aggregation function $\phi$ as the superscript $\hat{f}^\phi$.
@@ -62,7 +62,7 @@ With the input in place, we will walk through the full algorithm and also turn i
 As we aim to train multiple models of our predictive estimator, we need to have subsets of our training data to train them. 
 Training the models on the same data would make no sense of course.
 
-Randomly samplig data from the training time series would completley violately the correlation of the time series data. 
+Randomly sampling data from the training time series would completely violate the correlation of the time series data. 
 Therefore, the authors use block boostrapping: the method simply divides the time series into subsequences of a certain size. Then, not individual data points are sampled to construct a new time series, but the blocks are sampled. 
 
 
@@ -154,7 +154,7 @@ Thus, we estimate a threshold probability ($\beta$) to get a prediction interval
 
 ![part 2](/images/enbPi/pseudo-code-part-2.png)
 
-Analogus to the first block of the algorithm, I have created a python function "predict" for creating the intervals on new data points. 
+Analogous to the first block of the algorithm, I have created a python function "predict" for creating the intervals on new data points. 
 
 ```python
     def predict(self, x_test, alpha = 0.05):
@@ -222,7 +222,7 @@ def __init__(self, estimator, aggregation_function = np.mean):
     
 ```
 ### Professional Implementation of EnbPI
-For real use cases, please use the implemenation of the algorithm in the MAPIE library for conformal predictions.
+For real use cases, please use the implementation of the algorithm in the MAPIE library for conformal predictions.
 
 Doing so, results in the prediction interval plot in the introductionary section of this blog post :)
 
